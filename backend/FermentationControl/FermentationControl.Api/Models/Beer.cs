@@ -21,7 +21,7 @@
         public string Style { get; set; } = string.Empty;
 
 
-        public FermentationParameters? FermentationParameters { get; set; }
+        public FermentationParameter? FermentationParameter { get; set; }
 
         public ICollection<FermentationRecord> FermentationRecords { get; set; } = new List<FermentationRecord>();
     }

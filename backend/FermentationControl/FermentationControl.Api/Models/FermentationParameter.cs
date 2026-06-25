@@ -3,7 +3,7 @@
     /// <summary>
     /// Cadastro de parâmetros de fermentação
     /// </summary>
-    public class FermentationParameters
+    public class FermentationParameter
     {
         /// <summary>
         /// Identificador único do parâmetro.
