@@ -50,7 +50,7 @@
         /// Valores possíveis: "Dentro do Padrão", "Atenção", "Fora do Padrão".
         /// Preenchido automaticamente pelo sistema ao salvar o registro.
         /// </summary>
-        public string Categorias { get; set; } = string.Empty;
+        public string Category { get; set; } = string.Empty;
 
         public Beer? Beer { get; set; }
 
