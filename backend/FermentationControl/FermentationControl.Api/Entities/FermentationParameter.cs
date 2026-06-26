@@ -1,4 +1,4 @@
-﻿namespace FermentationControl.Api.Models
+﻿namespace FermentationControl.Api.Entities
 {
     /// <summary>
     /// Cadastro de parâmetros de fermentação

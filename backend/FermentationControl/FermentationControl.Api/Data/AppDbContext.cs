@@ -1,4 +1,4 @@
-﻿using FermentationControl.Api.Models;
+﻿using FermentationControl.Api.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace FermentationControl.Api.Data
