@@ -1,4 +1,6 @@
-﻿namespace FermentationControl.Api.Entities
+﻿using FermentationControl.Api.Enums;
+
+namespace FermentationControl.Api.Entities
 {
     /// <summary>
     /// Cadastro de registros de fermentação
@@ -46,11 +48,11 @@
         public string? Notes { get; set; }
 
         /// <summary>
-        /// Categorias de classificação automática do registro com base nos parâmetros da cerveja.
-        /// Valores possíveis: "Dentro do Padrão", "Atenção", "Fora do Padrão".
+        /// Categorias de classificação automática de um registro de fermentação.
+        /// Valores: "Dentro do Padrão", "Atenção", "Fora do Padrão".
         /// Preenchido automaticamente pelo sistema ao salvar o registro.
         /// </summary>
-        public string Category { get; set; } = string.Empty;
+        public FermentationCategory Category { get; set; }
 
         public Beer? Beer { get; set; }
 
