@@ -18,7 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Dashboard\Queries\" />
     <Folder Include="Features\FermentationRecord\Commands\" />
     <Folder Include="Features\FermentationRecord\Queries\" />
   </ItemGroup>
