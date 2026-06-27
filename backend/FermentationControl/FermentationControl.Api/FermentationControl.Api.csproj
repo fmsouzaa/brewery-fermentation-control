@@ -18,8 +18,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Features\" />
+    <Folder Include="Features\Dashboard\Queries\" />
+    <Folder Include="Features\FermentationParameter\Commands\" />
+    <Folder Include="Features\FermentationParameter\Queries\" />
+    <Folder Include="Features\FermentationRecord\Commands\" />
+    <Folder Include="Features\FermentationRecord\Queries\" />
+    <Folder Include="Features\Tank\Commands\" />
+    <Folder Include="Features\Tank\Queries\" />
   </ItemGroup>
 
 </Project>
