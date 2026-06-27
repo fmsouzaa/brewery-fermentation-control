@@ -26,6 +26,11 @@
         public decimal TemperatureMax { get; set; }
 
         /// <summary>
+        /// Tolerância aplicada à faixa de temperatura. Valores fora do Min/Max, mas dentro de (Min - Tolerância) e (Max + Tolerância), geram alerta de Atenção.
+        /// </summary>
+        public decimal TemperatureTolerance { get; set; }
+
+        /// <summary>
         /// pH minimo.
         /// </summary>
         public decimal PHMin { get; set; }
@@ -36,14 +41,24 @@
         public decimal PHMax { get; set; }
 
         /// <summary>
-        /// Extração minima.
+        /// Tolerância aplicada à faixa de pH. Valores fora do Min/Max, mas dentro de (Min - Tolerância) e (Max + Tolerância), geram alerta de Atenção.
+        /// </summary>
+        public decimal PHTolerance { get; set; }
+
+        /// <summary>
+        /// Extrato minima.
         /// </summary>
         public decimal ExtractMin { get; set; }
 
         /// <summary>
-        /// Extração máxima.
+        /// Extrato máxima.
         /// </summary>
         public decimal ExtractMax { get; set; }
+
+        /// <summary>
+        /// Tolerância aplicada à faixa de extrato. Valores fora do Min/Max, mas dentro de (Min - Tolerância) e (Max + Tolerância), geram alerta de Atenção.
+        /// </summary>
+        public decimal ExtractTolerance { get; set; }
 
 
         public Beer? Beer { get; set; }
