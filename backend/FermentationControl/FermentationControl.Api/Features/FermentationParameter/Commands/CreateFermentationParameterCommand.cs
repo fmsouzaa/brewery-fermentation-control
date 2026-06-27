@@ -1,17 +1,12 @@
-﻿namespace FermentationControl.Api.DTOs.FermentationParameter
+﻿using FermentationControl.Api.DTOs.FermentationParameter;
+using MediatR;
+
+namespace FermentationControl.Api.Features.FermentationParameter.Commands
 {
-    /// <summary>
-    /// Dados de parâmetro retornados ao cliente.
-    /// </summary>
-    public class FermentationParameterResponseDto
+    public class CreateFermentationParameterCommand : IRequest<FermentationParameterResponseDto>
     {
         /// <summary>
-        /// Identificador único do parâmetro.
-        /// </summary>
-        public int Id { get; set; }
-
-        /// <summary>
-        /// Identificador da cerveja.
+        /// Identificador da cerveja associada aos parâmetros.
         /// </summary>
         public int BeerId { get; set; }
 
