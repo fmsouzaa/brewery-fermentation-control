@@ -1,14 +1,10 @@
-﻿using FermentationControl.Api.Enums;
+﻿using FermentationControl.Api.DTOs.FermentationRecord;
+using MediatR;
 
-namespace FermentationControl.Api.DTOs.FermentationRecord
+namespace FermentationControl.Api.Features.FermentationRecord.Commands
 {
-    public class FermentationRecordResponseDto
+    public class CreateFermentationRecordCommand : IRequest<FermentationRecordResponseDto>
     {
-        /// <summary>
-        /// Identificador único do registro.
-        /// </summary>
-        /// 
-        public int Id { get; set; }
 
         /// <summary>
         /// Identificador da cerveja.
@@ -51,13 +47,6 @@ namespace FermentationControl.Api.DTOs.FermentationRecord
         /// Observações adicionais sobre o registro (campo opcional).
         /// </summary>
         public string? Notes { get; set; }
-
-        /// <summary>
-        /// Categorias de classificação automática do registro com base nos parâmetros da cerveja.
-        /// Valores possíveis: "Dentro do Padrão", "Atenção", "Fora do Padrão".
-        /// Preenchido automaticamente pelo sistema ao salvar o registro.
-        /// </summary>
-        public FermentationCategory Category { get; set; } 
 
     }
 }

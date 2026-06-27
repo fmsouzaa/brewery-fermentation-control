@@ -2,7 +2,7 @@
 
 namespace FermentationControl.Api.DTOs.FermentationRecord
 {
-    public class FermentationRecordResponseDto
+    public class FermentationRecordDetailDto
     {
         /// <summary>
         /// Identificador único do registro.
@@ -11,21 +11,21 @@ namespace FermentationControl.Api.DTOs.FermentationRecord
         public int Id { get; set; }
 
         /// <summary>
-        /// Identificador da cerveja.
-        /// </summary>
-        ///
-        public int BeerId { get; set; }
-
-        /// <summary>
-        /// Identificador do tanque.
-        /// </summary>
-        ///
-        public int TankId { get; set; }
-
-        /// <summary>
         /// Data e hora em que o registro foi realizado.
         /// </summary>
         public DateTime DateTime { get; set; }
+
+        /// <summary>
+        /// Nome da cerveja.
+        /// </summary>
+        ///
+        public string BeerName { get; set; } 
+
+        /// <summary>
+        /// Nome do tanque.
+        /// </summary>
+        ///
+        public string TankName { get; set; }
 
         /// <summary>
         /// Número do lote (ex: IPA001, LAGER002).
@@ -57,7 +57,6 @@ namespace FermentationControl.Api.DTOs.FermentationRecord
         /// Valores possíveis: "Dentro do Padrão", "Atenção", "Fora do Padrão".
         /// Preenchido automaticamente pelo sistema ao salvar o registro.
         /// </summary>
-        public FermentationCategory Category { get; set; } 
-
+        public FermentationCategory Category { get; set; }
     }
 }
