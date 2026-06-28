@@ -1,4 +1,5 @@
 // Sidebar.tsx - Menu lateral de navegação
+import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.svg'
 import styles from './Sidebar.module.css'
 
@@ -12,12 +13,12 @@ const Sidebar = () => {
 
       {/* Links de navegação */}
       <nav className={styles.nav}>
-        <a href="/dashboard" className={styles.link}>Dashboard</a>
-        <a href="/beers" className={styles.link}>Cervejas</a>
-        <a href="/tanks" className={styles.link}>Tanques</a>
-        <a href="/parameters" className={styles.link}>Parâmetros</a>
-        <a href="/fermentation" className={styles.link}>Fermentação</a>
-        <a href="/history" className={styles.link}>Histórico</a>
+        <Link to="/dashboard" className={styles.link}>Dashboard</Link>
+        <Link to="/beers" className={styles.link}>Cervejas</Link>
+        <Link to="/tanks" className={styles.link}>Tanques</Link>
+        <Link to="/parameters" className={styles.link}>Parâmetros</Link>
+        <Link to="/fermentation" className={styles.link}>Fermentação</Link>
+        <Link to="/history" className={styles.link}>Histórico</Link>
       </nav>
     </aside>
   )
