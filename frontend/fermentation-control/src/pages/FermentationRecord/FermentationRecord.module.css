@@ -1,0 +1,120 @@
+/* FermantationRecord.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  font-size: 24px;
+  color: var(--color-black);
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--color-secondary);
+  margin-bottom: 16px;
+}
+
+.card {
+  background-color: var(--color-white);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.input {
+  padding: 10px 12px;
+  border: 1px solid var(--color-gray);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: var(--font-primary);
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--color-secondary);
+}
+
+.button {
+  padding: 10px 24px;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.th {
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray);
+  background-color: var(--color-secondary);
+}
+
+.td {
+  padding: 12px;
+  font-size: 14px;
+  text-transform: capitalize;
+  color: var(--color-primary);
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.tr:nth-child(even) {
+  background-color: var(--color-gray-light);
+}
+
+.tr:nth-child(odd) {
+  background-color: var(--color-white);
+}
+
+.fieldGroup {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.successMessage {
+  background-color: var(--color-green);
+  color: #1a5c1a;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+}
