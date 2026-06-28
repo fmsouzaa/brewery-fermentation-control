@@ -1,0 +1,39 @@
+/* Sidebar.module.css */
+
+.sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+}
+
+.logoContainer {
+  padding: 0 24px 32px;
+}
+
+.logo {
+  width: 140px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 12px;
+}
+
+.link {
+  color: var(--color-gray);
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.link:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-yellow);
+}

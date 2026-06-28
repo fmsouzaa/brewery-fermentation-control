@@ -1,0 +1,27 @@
+/* Configurações globais do projeto */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --color-primary: #1D1D2D;
+  --color-secondary: #063852;
+  --color-gray: #ACBBCD;
+  --color-gray-light: #E8E8E8;
+  --color-gray-medium: #A4A4A4;
+  --color-yellow: #FFC524;
+  --color-green: #9CDA97;
+  --color-red: #FA9897;
+  --color-black: #000000;
+
+  --font-primary: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: var(--font-primary);
+  background-color: var(--color-gray-light);
+}

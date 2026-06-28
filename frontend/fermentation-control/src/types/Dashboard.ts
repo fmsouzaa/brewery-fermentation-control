@@ -1,6 +1,6 @@
-export interface Dashboard {
+export interface DashboardData {
     totalRecords: number
     withinStandardCount: number
     attentionCount: number
-    OutOfStandardCount: number
+    outOfStandardCount: number
 }

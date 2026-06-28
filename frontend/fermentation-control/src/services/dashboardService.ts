@@ -1,5 +1,5 @@
 import api from './api'
-import type { Dashboard } from '../types/Dashboard.ts'
+import type { DashboardData  } from '../types/Dashboard.ts'
 
 // Busca os dados do dashboard
-export const getDashboard = () => api.get<Dashboard>('/api/Dashboard')
+export const getDashboard = () => api.get<DashboardData >('/api/Dashboard')
