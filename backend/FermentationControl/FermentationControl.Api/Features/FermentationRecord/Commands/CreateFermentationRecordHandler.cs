@@ -33,13 +33,13 @@ namespace FermentationControl.Api.Features.FermentationRecord.Commands
             var tank = await _context.Tanks
                 .FirstOrDefaultAsync(t => t.Id == request.TankId, cancellationToken);
 
-            if (beer == null)
+            if (tank == null)
             {
-                throw new Exception($"Cerveja com Id {request.BeerId} não encontrada.");
+                throw new Exception($"Tank com Id {request.TankId} não encontrada.");
             }
 
             // Busca os parâmetros cadastrados para a cerveja
-            var parameter = await _context.FermentationParameters.FirstOrDefaultAsync(cancellationToken);
+            var parameter = await _context.FermentationParameters.FirstOrDefaultAsync(p => p.BeerId == request.BeerId, cancellationToken);
 
             if (parameter == null)
             {
@@ -54,7 +54,7 @@ namespace FermentationControl.Api.Features.FermentationRecord.Commands
                 parameter
             );
 
-            
+
             var record = new Entities.FermentationRecord
             {
                 BeerId = request.BeerId,
