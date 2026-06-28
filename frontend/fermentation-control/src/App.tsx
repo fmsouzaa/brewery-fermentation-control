@@ -3,7 +3,9 @@ import Layout from './components/Layout/Layout'
 //import BeersPage from './pages/Beers/Beers'
 //import TanksPage from './pages/Tanks/Tanks'
 //import FermentationParameterPage from './pages/FermentationParameter/FermentationParameter'
-import FermentationRecordPage from './pages/FermentationRecord/FermentationRecord'
+//import FermentationRecordPage from './pages/FermentationRecord/FermentationRecord'
+import BatchHistoryPage from './pages/BatchHistory/BatchHistory'
+
 
 function App() {
   
@@ -13,7 +15,8 @@ function App() {
       {/* <BeersPage />  */}
       {/* <TanksPage />  */}
       {/* < FermentationParameterPage /> */}
-      <FermentationRecordPage />
+      {/* <FermentationRecordPage/> */}
+      <BatchHistoryPage />
     </Layout>
   )
 }
