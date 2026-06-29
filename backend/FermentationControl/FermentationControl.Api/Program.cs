@@ -1,6 +1,7 @@
 using FermentationControl.Api.Data;
 using FermentationControl.Api.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,7 +23,21 @@ builder.Services.AddScoped<FermentationClassificationService>();
 
 // Configura o Swagger para documentação e teste dos endpoints
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    // Informações gerais da API
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Brewery Fermentation Control API",
+        Version = "v1",
+        Description = "API para registro e acompanhamento de dados fermentativos de cervejarias."
+    });
+
+    // Habilita os comentários XML no Swagger
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    options.IncludeXmlComments(xmlPath);
+});
 
 builder.Services.AddCors(options =>
 {

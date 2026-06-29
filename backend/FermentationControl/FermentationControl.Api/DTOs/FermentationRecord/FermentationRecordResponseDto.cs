@@ -2,24 +2,24 @@
 
 namespace FermentationControl.Api.DTOs.FermentationRecord
 {
+    /// <summary>
+    /// Dados de um registro fermentativo retornados ao cliente.
+    /// </summary>
     public class FermentationRecordResponseDto
     {
         /// <summary>
         /// Identificador único do registro.
         /// </summary>
-        /// 
         public int Id { get; set; }
 
         /// <summary>
-        /// Identificador da cerveja.
+        /// Identificador da cerveja associada ao registro.
         /// </summary>
-        ///
         public int BeerId { get; set; }
 
         /// <summary>
-        /// Identificador do tanque.
+        /// Identificador do tanque utilizado no registro.
         /// </summary>
-        ///
         public int TankId { get; set; }
 
         /// <summary>
@@ -28,12 +28,12 @@ namespace FermentationControl.Api.DTOs.FermentationRecord
         public DateTime DateTime { get; set; }
 
         /// <summary>
-        /// Número do lote (ex: IPA001, LAGER002).
+        /// Número do lote (ex: LOTE001, LOTE002).
         /// </summary>
         public string BatchNumber { get; set; } = string.Empty;
 
         /// <summary>
-        /// Temperatura medida no momento do registro em graus Celsius.
+        /// Temperatura medida no momento do registro em graus Celsius (°C).
         /// </summary>
         public decimal Temperature { get; set; }
 
@@ -43,7 +43,7 @@ namespace FermentationControl.Api.DTOs.FermentationRecord
         public decimal PH { get; set; }
 
         /// <summary>
-        /// Extrato medido no momento do registro.
+        /// Extrato medido no momento do registro em graus Plato (°P).
         /// </summary>
         public decimal Extract { get; set; }
 
@@ -53,11 +53,10 @@ namespace FermentationControl.Api.DTOs.FermentationRecord
         public string? Notes { get; set; }
 
         /// <summary>
-        /// Categorias de classificação automática do registro com base nos parâmetros da cerveja.
-        /// Valores possíveis: "Dentro do Padrão", "Atenção", "Fora do Padrão".
+        /// Classificação automática do registro com base nos parâmetros da cerveja.
+        /// Valores possíveis: 0 = Dentro do Padrão, 1 = Atenção, 2 = Fora do Padrão.
         /// Preenchido automaticamente pelo sistema ao salvar o registro.
         /// </summary>
-        public FermentationCategory Category { get; set; } 
-
+        public FermentationCategory Category { get; set; }
     }
 }

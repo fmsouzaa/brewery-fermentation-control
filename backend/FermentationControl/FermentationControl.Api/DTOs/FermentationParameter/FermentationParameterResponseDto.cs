@@ -11,17 +11,17 @@
         public int Id { get; set; }
 
         /// <summary>
-        /// Identificador da cerveja.
+        /// Identificador da cerveja associada aos parâmetros.
         /// </summary>
         public int BeerId { get; set; }
 
         /// <summary>
-        /// Temperatura minima em graus Celsius.
+        /// Temperatura mínima em graus Celsius (°C).
         /// </summary>
         public decimal TemperatureMin { get; set; }
 
         /// <summary>
-        /// Temperatura máxima em graus Celsius.
+        /// Temperatura máxima em graus Celsius (°C).
         /// </summary>
         public decimal TemperatureMax { get; set; }
 
@@ -31,7 +31,7 @@
         public decimal TemperatureTolerance { get; set; }
 
         /// <summary>
-        /// pH minimo.
+        /// pH mínimo.
         /// </summary>
         public decimal PHMin { get; set; }
 
@@ -46,12 +46,12 @@
         public decimal PHTolerance { get; set; }
 
         /// <summary>
-        /// Extrato minima.
+        /// Extrato mínimo em graus Plato (°P).
         /// </summary>
         public decimal ExtractMin { get; set; }
 
         /// <summary>
-        /// Extrato máxima.
+        /// Extrato máximo em graus Plato (°P).
         /// </summary>
         public decimal ExtractMax { get; set; }
 

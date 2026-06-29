@@ -3,6 +3,9 @@ using MediatR;
 
 namespace FermentationControl.Api.Features.FermentationParameter.Commands
 {
+    /// <summary>
+    /// Command para cadastro de uma nova cerveja.
+    /// </summary>
     public class CreateFermentationParameterCommand : IRequest<FermentationParameterResponseDto>
     {
         /// <summary>
@@ -11,12 +14,12 @@ namespace FermentationControl.Api.Features.FermentationParameter.Commands
         public int BeerId { get; set; }
 
         /// <summary>
-        /// Temperatura minima em graus Celsius.
+        /// Temperatura mínima em graus Celsius (°C).
         /// </summary>
         public decimal TemperatureMin { get; set; }
 
         /// <summary>
-        /// Temperatura máxima em graus Celsius.
+        /// Temperatura máxima em graus Celsius (°C).
         /// </summary>
         public decimal TemperatureMax { get; set; }
 
@@ -26,7 +29,7 @@ namespace FermentationControl.Api.Features.FermentationParameter.Commands
         public decimal TemperatureTolerance { get; set; }
 
         /// <summary>
-        /// pH minimo.
+        /// pH mínimo.
         /// </summary>
         public decimal PHMin { get; set; }
 
@@ -41,12 +44,12 @@ namespace FermentationControl.Api.Features.FermentationParameter.Commands
         public decimal PHTolerance { get; set; }
 
         /// <summary>
-        /// Extrato minima.
+        /// Extrato mínimo em graus Plato (°P).
         /// </summary>
         public decimal ExtractMin { get; set; }
 
         /// <summary>
-        /// Extrato máxima.
+        /// Extrato máximo em graus Plato (°P).
         /// </summary>
         public decimal ExtractMax { get; set; }
 

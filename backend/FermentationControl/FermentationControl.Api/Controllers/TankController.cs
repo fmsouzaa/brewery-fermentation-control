@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FermentationControl.Api.Controllers
 {
+    /// <summary>
+    /// Controller responsável pelo gerenciamento de tanques.
+    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
     public class TankController : ControllerBase
@@ -16,6 +19,13 @@ namespace FermentationControl.Api.Controllers
             _mediator = mediator;
         }
 
+        /// <summary>
+        /// Cadastra um novo tanque.
+        /// </summary>
+        /// <param name="command">Dados do tanque a ser cadastrado.</param>
+        /// <returns>Tanque cadastrado.</returns>
+        /// <response code="200">Tanque cadastrado com sucesso.</response>
+        /// <response code="400">Dados inválidos.</response>
         [HttpPost]
         public async Task<IActionResult> CreateTank([FromBody] CreateTankCommand command)
         {
@@ -23,6 +33,11 @@ namespace FermentationControl.Api.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Lista todos os tanques cadastrados.
+        /// </summary>
+        /// <returns>Lista de tanques.</returns>
+        /// <response code="200">Retorna a lista de tanques.</response>
         [HttpGet]
         public async Task<IActionResult> GetAllTanks()
         {

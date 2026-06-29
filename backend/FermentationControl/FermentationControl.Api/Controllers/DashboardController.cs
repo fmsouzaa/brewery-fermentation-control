@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FermentationControl.Api.Controllers
 {
+    /// <summary>
+    /// Controller responsável pelos indicadores do dashboard.
+    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
     public class DashboardController : ControllerBase
@@ -15,6 +18,10 @@ namespace FermentationControl.Api.Controllers
             _mediator = mediator;
         }
 
+        /// <summary>
+        /// Retorna os indicadores gerais do dashboard, incluindo o total de registros fermentativos e a quantidade por classificação (Dentro do Padrão, Atenção e Fora do Padrão).
+        /// </summary>
+        /// <response code="200">Retorna os indicadores do dashboard.</response>
         [HttpGet]
         public async Task<IActionResult> GetDashboard()
         {

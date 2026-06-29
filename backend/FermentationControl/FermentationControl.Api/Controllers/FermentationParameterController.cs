@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FermentationControl.Api.Controllers
 {
+    /// <summary>
+    /// Controller responsável pelos parâmetros fermentativos das cervejas.
+    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
     public class FermentationParameterController : ControllerBase
@@ -16,6 +19,13 @@ namespace FermentationControl.Api.Controllers
             _mediator = mediator;
         }
 
+        /// <summary>
+        /// Cadastra os parâmetros fermentativos de uma cerveja.
+        /// Cada cerveja pode possuir apenas um conjunto de parâmetros cadastrados.
+        /// </summary>
+        /// <param name="command">Dados dos parâmetros fermentativos da cerveja.</param>
+        /// <response code="200">Parâmetros cadastrados com sucesso.</response>
+        /// <response code="400">Dados inválidos ou cerveja não encontrada.</response>
         [HttpPost]
         public async Task<IActionResult> CreateFermentationParameter([FromBody] CreateFermentationParameterCommand command)
         {
@@ -23,6 +33,12 @@ namespace FermentationControl.Api.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Busca os parâmetros fermentativos de uma cerveja pelo seu identificador.
+        /// </summary>
+        /// <param name="beerId">Identificador da cerveja.</param>
+        /// <response code="200">Retorna os parâmetros fermentativos da cerveja.</response>
+        /// <response code="404">Parâmetros não encontrados para a cerveja informada.</response>
         [HttpGet("{beerId}")]
         public async Task<IActionResult> GetByBeerId(int beerId)
         {
