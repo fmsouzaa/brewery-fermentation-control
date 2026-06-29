@@ -113,8 +113,22 @@
 
 .successMessage {
   background-color: var(--color-green);
-  color: #1a5c1a;
+  color: var(--color-black);
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 500;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .fieldGroup {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .fieldGroup {
+    grid-template-columns: 1fr;
+  }
 }

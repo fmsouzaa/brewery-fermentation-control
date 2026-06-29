@@ -171,7 +171,7 @@ const FermentationRecordPage = () => {
         </form>
       </div>
 
-      {/* Lista de registros salvos na sessão */}
+      {/* Mensagem de sucesso */}
       {success && (
         <div className={styles.successMessage}>
             Registro salvo com sucesso!

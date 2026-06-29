@@ -118,6 +118,7 @@
   border-radius: 12px;
   font-size: 12px;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .green {
@@ -133,4 +134,31 @@
 .red {
   background-color: var(--color-red);
   color: #7a1a1a;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .card {
+    overflow-x: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .card {
+    overflow-x: auto;
+  }
+
+  .table {
+    font-size: 12px;
+    min-width: 600px;
+  }
+
+  .th, .td {
+    padding: 6px;
+  }
+
+  .searchRow {
+    max-width: 100%;
+  }
 }

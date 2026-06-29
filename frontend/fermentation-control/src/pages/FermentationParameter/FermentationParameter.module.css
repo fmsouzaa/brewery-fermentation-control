@@ -103,3 +103,25 @@
 .tr:nth-child(odd) {
   background-color: var(--color-white);
 }
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .fieldGroup {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .fieldGroup {
+    grid-template-columns: 1fr;
+  }
+
+  .table {
+    font-size: 12px;
+  }
+
+  .th, .td {
+    padding: 8px;
+  }
+}
