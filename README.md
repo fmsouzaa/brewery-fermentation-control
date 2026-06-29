@@ -87,7 +87,7 @@ dotnet ef database update
 dotnet run
 ```
 
-> API disponível em: `https://localhost:7150/swagger`
+> API disponível em: `https://localhost:5107/swagger`
 
 ### 3. Executar o Frontend
 
