@@ -4,19 +4,6 @@ API RESTful desenvolvida em **C#/.NET 8** para controle de fermentação cerveje
 
 ---
 
-## Índice
-
-- [Tecnologias](#-tecnologias)
-- [Arquitetura](#-arquitetura)
-- [Regra de Negócio](#-regra-de-negócio)
-- [Funcionalidades](#-funcionalidades)
-- [Pré-requisitos](#-pré-requisitos)
-- [Como executar](#-como-executar)
-- [Endpoints](#-endpoints)
-- [Perguntas do Desafio](#-perguntas-do-desafio)
-
----
-
 ## Tecnologias
 
 - .NET 8
