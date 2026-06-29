@@ -11,7 +11,8 @@ interface SidebarProps {
 const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   return (
     <aside className={`${styles.sidebar} ${isOpen ? styles.sidebarOpen : ''}`}>
-      {/* Botão fechar - só aparece no mobile quando sidebar está aberta */}
+      
+      {/* Botão de fechar - só aparece no mobile quando sidebar está aberta */}
       <button className={styles.closeButton} onClick={onClose}>
         ✕
       </button>

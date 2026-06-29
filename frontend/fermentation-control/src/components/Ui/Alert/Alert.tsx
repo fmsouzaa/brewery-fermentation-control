@@ -1,4 +1,4 @@
-// Alert.tsx
+// Alert.tsx - Componente para mostrar mensagem de erro e sucesso.
 import { useEffect } from 'react'
 import styles from './Alert.module.css'
 

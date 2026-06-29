@@ -51,13 +51,14 @@ const BatchHistory = () => {
         </form>
       </div>
 
-      {/* Resultado da busca */}
+      {/* Resultado da busca quando não é encontrado nenhum*/}
       {searched && records.length === 0 && (
         <div className={styles.empty}>
             Nenhum registro encontrado para o lote {searchedBatch}.
         </div>
-)}
+      )}
 
+      {/* Lista da fermentação */}
       {records.length > 0 && (
         <div className={styles.card}>
           <h2 className={styles.subtitle}>

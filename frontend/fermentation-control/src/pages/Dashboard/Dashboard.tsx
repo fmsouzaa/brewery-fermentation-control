@@ -18,6 +18,7 @@ const Dashboard = () => {
   // Enquanto os dados não chegam, mostra loading
   if (!data) return <div className={styles.loading}>Carregando...</div>
 
+  //Cards dos totais das categorias.
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Dashboard</h1>
