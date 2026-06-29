@@ -74,7 +74,7 @@ brewery-fermentation-control/
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/brewery-fermentation-control.git
+git clone https://github.com/fmsouzaa/brewery-fermentation-control.git
 cd brewery-fermentation-control
 ```
 
@@ -87,7 +87,7 @@ dotnet ef database update
 dotnet run
 ```
 
-> API disponível em: `https://localhost:5107/swagger`
+> API disponível em: `http://localhost:5107/swagger`
 
 ### 3. Executar o Frontend
 
