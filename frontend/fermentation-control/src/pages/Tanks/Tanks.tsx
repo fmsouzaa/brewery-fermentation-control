@@ -4,6 +4,7 @@ import type { Tank } from '../../types/Tank'
 import { getAllTanks, createTank } from '../../services/tankService'
 import styles from './Tanks.module.css'
 import { toTitleCase } from '../../utils/textFormatterUtils'
+import Alert from '../../components/Ui/Alert/Alert'
 
 const Tanks = () => {
   // Lista de tanques
@@ -11,6 +12,11 @@ const Tanks = () => {
   // Campos do formulário
   const [name, setName] = useState('')
   const [capacity, setCapacity] = useState('')
+
+  //Mensagem de sucesso ou erro
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState('')
+
 
   // Busca os tanques quando a página carrega
   useEffect(() => {
@@ -25,13 +31,20 @@ const Tanks = () => {
 
   // Salva um novo tanque
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    createTank({ name, capacity: Number(capacity) }).then(() => {
+  e.preventDefault()
+  setError('')
+  setSuccess(false)
+  createTank({ name, capacity: Number(capacity) })
+    .then(() => {
+      setSuccess(true)
       setName('')
       setCapacity('')
       loadTanks()
     })
-  }
+    .catch(() => {
+      setError('Erro ao salvar o tanque. Tente novamente.')
+    })
+}
 
   return (
     <div className={styles.container}>
@@ -65,10 +78,10 @@ const Tanks = () => {
                 />
             </div>
 
-            <button type="submit" className={styles.button}>
-                Salvar
-            </button>
-            </form>
+            <button type="submit" className={styles.button}>Salvar</button>
+            {success && <Alert type="success" message="Tanque salvo com sucesso!" onClose={() => setSuccess(false)} />}
+            {error && <Alert type="error" message={error} onClose={() => setError('')} />}
+          </form>
         </div>
         {/* Lista de cervejas cadastradas */}
         <div className={styles.card}>

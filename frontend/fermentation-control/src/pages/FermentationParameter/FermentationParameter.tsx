@@ -12,6 +12,9 @@ const FermentationParameterPage = () => {
   const [beers, setBeers] = useState<Beer[]>([])
   const [parameter, setParameter] = useState<FermentationParameter | null>(null)
   const [selectedBeerId, setSelectedBeerId] = useState<number>(0)
+  
+  //Mensagem de sucesso ou erro
+  const [success, setSuccess] = useState(false)
   const [error, setError] = useState('')
 
   // Campos do formulário
@@ -54,6 +57,7 @@ const FermentationParameterPage = () => {
       extractTolerance: Number(extractTolerance),
     })
     .then(() => {
+      setSuccess(true)
       getParameterByBeerId(selectedBeerId).then(response => setParameter(response.data))
     })
     .catch((err) => {
@@ -139,6 +143,9 @@ const FermentationParameterPage = () => {
           </div>
 
           <button type="submit" className={styles.button}>Salvar</button>
+
+          {/* Mensagem sucesso ou erro */}
+          {success && <Alert type="success" message="Parâmetro salvo com sucesso!" onClose={() => setSuccess(false)} />}
           {error && <Alert type="error" message={error} onClose={() => setError('')} />}
         </form>
       </div>

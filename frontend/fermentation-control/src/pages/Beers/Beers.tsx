@@ -4,6 +4,7 @@ import type { Beer } from '../../types/Beer'
 import { getAllBeers, createBeer } from '../../services/beerService'
 import styles from './Beers.module.css'
 import { toTitleCase } from '../../utils/textFormatterUtils'
+import Alert from '../../components/Ui/Alert/Alert'
 
 const Beers = () => {
   // Lista de cervejas
@@ -11,6 +12,10 @@ const Beers = () => {
   // Campos do formulário
   const [name, setName] = useState('')
   const [style, setStyle] = useState('')
+
+  //Mensagem de sucesso ou erro
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState('')
 
   // Busca as cervejas quando a página carrega
   useEffect(() => {
@@ -25,13 +30,20 @@ const Beers = () => {
 
   // Salva uma nova cerveja
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    createBeer({ name, style }).then(() => {
+  e.preventDefault()
+  setError('')
+  setSuccess(false)
+  createBeer({ name, style })
+    .then(() => {
+      setSuccess(true)
       setName('')
       setStyle('')
       loadBeers()
     })
-  }
+    .catch(() => {
+      setError('Erro ao salvar a cerveja. Tente novamente.')
+    })
+}
 
   return (
     <div className={styles.container}>
@@ -65,9 +77,10 @@ const Beers = () => {
             />
           </div>
 
-          <button type="submit" className={styles.button}>
-            Salvar
-          </button>
+          <button type="submit" className={styles.button}>Salvar</button>
+          {success && <Alert type="success" message="Cerveja salva com sucesso!" onClose={() => setSuccess(false)} />}
+          {error && <Alert type="error" message={error} onClose={() => setError('')} />}
+
         </form>
       </div>
 

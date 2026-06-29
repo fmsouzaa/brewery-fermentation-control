@@ -28,33 +28,38 @@ const FermentationRecordPage = () => {
     getAllTanks().then(response => setTanks(response.data))
   }, [])
 
-  //Mensagem de sucesso
+  //Mensagem de sucesso ou erro
   const [success, setSuccess] = useState(false)
+  const [error, setError] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    createFermentationRecord({
-      beerId,
-      tankId,
-      batchNumber,
-      temperature: Number(temperature),
-      ph: Number(ph),
-      extract: Number(extract),
-      notes,
-      dateTime,
-      category: 0,
-    }).then(() => {
-        setSuccess(true)
-        setBatchNumber('')
-        setTemperature('')
-        setPh('')
-        setExtract('')
-        setNotes('')
-        setDateTime('')
-        // Esconde a mensagem após 3 segundos
-        setTimeout(() => setSuccess(false), 3000)
+  e.preventDefault()
+  setSuccess(false)
+  setError('')
+  createFermentationRecord({
+    beerId,
+    tankId,
+    batchNumber,
+    temperature: Number(temperature),
+    ph: Number(ph),
+    extract: Number(extract),
+    notes,
+    dateTime,
+    category: 0,
+  })
+    .then(() => {
+      setSuccess(true)
+      setBatchNumber('')
+      setTemperature('')
+      setPh('')
+      setExtract('')
+      setNotes('')
+      setDateTime('')
     })
-  }
+    .catch(() => {
+      setError('Erro ao salvar o registro. Tente novamente.')
+    })
+}
 
   return (
     <div className={styles.container}>
@@ -169,8 +174,10 @@ const FermentationRecordPage = () => {
           </div>
 
           <button type="submit" className={styles.button}>Salvar</button>
-          {/* Mensagem de sucesso */}
+          
+          {/* Mensagem de sucesso ou erro */}
           {success && <Alert type="success" message="Registro salvo com sucesso!" onClose={() => setSuccess(false)} />}
+          {error && <Alert type="error" message={error} onClose={() => setError('')} />}
         </form>
       </div>
     </div>
