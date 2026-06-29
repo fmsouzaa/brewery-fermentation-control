@@ -12,6 +12,8 @@
   --color-red: #FA9897;
   --color-black: #000000;
   --color-white: #FFFFFFFF;
+  --color-alert-red: #7A1A1A;
+  --color-alert-green: #1A5C1A;
 
   --font-primary: 'Montserrat', sans-serif;
 }

@@ -1,0 +1,17 @@
+/* Alert.module.css */
+.alert {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+.success {
+  background-color: var(--color-green);
+  color: var(--color-alert-green);
+}
+
+.error {
+  background-color: var(--color-red);
+  color: var( --color-alert-red);
+}

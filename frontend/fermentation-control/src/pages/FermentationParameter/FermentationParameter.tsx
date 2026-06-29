@@ -6,11 +6,13 @@ import { getParameterByBeerId, createParameter } from '../../services/parameterS
 import { getAllBeers } from '../../services/beerService'
 import styles from './FermentationParameter.module.css'
 import { toTitleCase } from '../../utils/textFormatterUtils'
+import Alert from '../../components/Ui/Alert/Alert'
 
 const FermentationParameterPage = () => {
   const [beers, setBeers] = useState<Beer[]>([])
   const [parameter, setParameter] = useState<FermentationParameter | null>(null)
   const [selectedBeerId, setSelectedBeerId] = useState<number>(0)
+  const [error, setError] = useState('')
 
   // Campos do formulário
   const [temperatureMin, setTemperatureMin] = useState('')
@@ -50,8 +52,16 @@ const FermentationParameterPage = () => {
       extractMin: Number(extractMin),
       extractMax: Number(extractMax),
       extractTolerance: Number(extractTolerance),
-    }).then(() => {
+    })
+    .then(() => {
       getParameterByBeerId(selectedBeerId).then(response => setParameter(response.data))
+    })
+    .catch((err) => {
+      if (err.response?.status === 500) {
+        setError('Já existe um parâmetro cadastrado para essa cerveja.')
+      } else {
+        setError('Erro ao salvar. Tente novamente.')
+      }
     })
   }
 
@@ -129,6 +139,7 @@ const FermentationParameterPage = () => {
           </div>
 
           <button type="submit" className={styles.button}>Salvar</button>
+          {error && <Alert type="error" message={error} onClose={() => setError('')} />}
         </form>
       </div>
 

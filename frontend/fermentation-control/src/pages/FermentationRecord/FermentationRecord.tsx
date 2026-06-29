@@ -7,6 +7,7 @@ import { getAllBeers } from '../../services/beerService'
 import { getAllTanks } from '../../services/tankService'
 import { toTitleCase } from '../../utils/textFormatterUtils'
 import styles from './FermentationRecord.module.css'
+import Alert from '../../components/Ui/Alert/Alert'
 
 const FermentationRecordPage = () => {
   const [beers, setBeers] = useState<Beer[]>([])
@@ -168,15 +169,10 @@ const FermentationRecordPage = () => {
           </div>
 
           <button type="submit" className={styles.button}>Salvar</button>
+          {/* Mensagem de sucesso */}
+          {success && <Alert type="success" message="Registro salvo com sucesso!" onClose={() => setSuccess(false)} />}
         </form>
       </div>
-
-      {/* Mensagem de sucesso */}
-      {success && (
-        <div className={styles.successMessage}>
-            Registro salvo com sucesso!
-        </div>
-        )}
     </div>
   )
 }
