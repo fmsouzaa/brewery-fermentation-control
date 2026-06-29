@@ -2,7 +2,6 @@
 using FermentationControl.Api.Features.FermentationParameter.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Reflection.Metadata;
 
 namespace FermentationControl.Api.Controllers
 {
