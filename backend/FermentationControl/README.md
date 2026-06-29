@@ -138,7 +138,7 @@ dotnet run
 Abra o navegador e acesse:
 
 ```
-https://localhost:5107/swagger
+http://localhost:5107/swagger
 ```
 
 > A porta pode variar. Verifique no terminal a URL exibida após `Now listening on:`.
